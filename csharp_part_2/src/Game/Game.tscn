@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7kfeksgwgp8y"]
+
+[ext_resource type="Script" path="res://src/Game/Game.cs" id="1_nva6v"]
+[ext_resource type="Script" path="res://src/Map/Map.cs" id="3_cyf2k"]
+[ext_resource type="Script" path="res://src/Game/EventHandler.cs" id="3_lar5l"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_nva6v")
+
+[node name="EventHandler" type="Node" parent="."]
+script = ExtResource("3_lar5l")
+
+[node name="Map" type="Node2D" parent="."]
+script = ExtResource("3_cyf2k")
+
+[node name="Entities" type="Node2D" parent="."]
