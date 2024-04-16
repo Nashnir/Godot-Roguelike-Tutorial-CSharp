@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7kfeksgwgp8y"]
+
+[ext_resource type="Script" path="res://src/Game/Game.cs" id="1_nva6v"]
+[ext_resource type="Script" path="res://src/Map/Map.cs" id="3_cyf2k"]
+[ext_resource type="Script" path="res://src/Game/EventHandler.cs" id="3_lar5l"]
+[ext_resource type="Script" path="res://src/Map/DungeonGenerator.cs" id="4_c1k4q"]
+[ext_resource type="Script" path="res://src/Map/FieldOfView.cs" id="5_7yadx"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_nva6v")
+
+[node name="EventHandler" type="Node" parent="."]
+script = ExtResource("3_lar5l")
+
+[node name="Map" type="Node2D" parent="."]
+script = ExtResource("3_cyf2k")
+
+[node name="DungeonGenerator" type="Node" parent="Map"]
+script = ExtResource("4_c1k4q")
+
+[node name="FieldOfView" type="Node" parent="Map"]
+script = ExtResource("5_7yadx")
+
+[node name="Entities" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
