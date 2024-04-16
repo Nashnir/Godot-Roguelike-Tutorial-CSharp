@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=4 format=3 uid="uid://c7xg4fekagtek"]
+
+[ext_resource type="Script" path="res://src/Entities/EntityDefinition.cs" id="1_1yk20"]
+[ext_resource type="Texture2D" uid="uid://dwt17ac8sajxv" path="res://assets/images/kenney_1-bit-pack/monochrome_packed.png" id="1_e63a1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pl1h1"]
+atlas = ExtResource("1_e63a1")
+region = Rect2(432, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_1yk20")
+Name = "Player"
+Texture = SubResource("AtlasTexture_pl1h1")
+Color = Color(1, 1, 1, 1)
+IsBlockingMovement = true
