@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=7 format=3 uid="uid://lr5p4pknpv4l"]
+
+[ext_resource type="Texture2D" uid="uid://dwt17ac8sajxv" path="res://assets/images/kenney_1-bit-pack/monochrome_packed.png" id="1_a6vxi"]
+[ext_resource type="Texture2D" uid="uid://cgb7a8k7dnmp" path="res://assets/resources/default_death_texture.tres" id="1_ek4ua"]
+[ext_resource type="Script" path="res://src/Entities/EntityDefinition.cs" id="1_fq37o"]
+[ext_resource type="Script" path="res://src/Entities/Actors/Components/ComponentDefinitions/FighterComponentDefinition.cs" id="1_of3di"]
+
+[sub_resource type="Resource" id="Resource_721xh"]
+script = ExtResource("1_of3di")
+MaxHp = 16
+Power = 4
+Defense = 1
+DeathTexture = ExtResource("1_ek4ua")
+DeathColor = Color(0.545098, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewq3y"]
+atlas = ExtResource("1_a6vxi")
+region = Rect2(416, 32, 16, 16)
+
+[resource]
+script = ExtResource("1_fq37o")
+Name = "Troll"
+Texture = SubResource("AtlasTexture_ewq3y")
+Color = Color(0, 0.498039, 0, 1)
+IsBlockingMovement = true
+EntityType = 2
+FighterComponentDefinition = SubResource("Resource_721xh")
+AIType = 1
+InventoryCapacity = 0
