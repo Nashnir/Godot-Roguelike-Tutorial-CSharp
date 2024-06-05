@@ -1,0 +1,103 @@
+[gd_scene load_steps=14 format=3 uid="uid://cg7mgvblylmdg"]
+
+[ext_resource type="Texture2D" uid="uid://dwt17ac8sajxv" path="res://assets/images/kenney_1-bit-pack/monochrome_packed.png" id="1_qbexd"]
+[ext_resource type="Script" path="res://src/GUI/LevelUpMenu/LevelUpMenu.cs" id="1_qvvuh"]
+[ext_resource type="FontFile" uid="uid://s337gi6ln3f" path="res://assets/fonts/Kenney Pixel.ttf" id="2_gkten"]
+[ext_resource type="PackedScene" uid="uid://dpcdivrj0bdva" path="res://src/GUI/InventoryMenu/inventory_menu_item.tscn" id="3_cnjg0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k3687"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+texture = ExtResource("1_qbexd")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(768, 336, 16, 16)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ew6pm"]
+font = ExtResource("2_gkten")
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_8d1ua"]
+color = Color(1, 1, 1, 1)
+
+[sub_resource type="InputEventKey" id="InputEventKey_7qnr7"]
+device = -1
+keycode = 65
+unicode = 97
+
+[sub_resource type="Shortcut" id="Shortcut_ua54o"]
+events = [SubResource("InputEventKey_7qnr7")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_j1sgp"]
+device = -1
+keycode = 66
+unicode = 98
+
+[sub_resource type="Shortcut" id="Shortcut_u38k0"]
+events = [SubResource("InputEventKey_j1sgp")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_my8y0"]
+device = -1
+keycode = 67
+unicode = 99
+
+[sub_resource type="Shortcut" id="Shortcut_xj0b1"]
+events = [SubResource("InputEventKey_my8y0")]
+
+[node name="LevelUpMenu" type="CanvasLayer"]
+script = ExtResource("1_qvvuh")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_k3687")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Level Up"
+label_settings = SubResource("LabelSettings_ew6pm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Congratulations! You level up! Select an attribute to increase."
+label_settings = SubResource("LabelSettings_ew6pm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxLine_8d1ua")
+
+[node name="HealthUpgradeButton" parent="CenterContainer/PanelContainer/VBoxContainer" instance=ExtResource("3_cnjg0")]
+unique_name_in_owner = true
+layout_mode = 2
+shortcut = SubResource("Shortcut_ua54o")
+
+[node name="PowerUpgradeButton" parent="CenterContainer/PanelContainer/VBoxContainer" instance=ExtResource("3_cnjg0")]
+unique_name_in_owner = true
+layout_mode = 2
+shortcut = SubResource("Shortcut_u38k0")
+
+[node name="DefenseUpgradeButton" parent="CenterContainer/PanelContainer/VBoxContainer" instance=ExtResource("3_cnjg0")]
+unique_name_in_owner = true
+layout_mode = 2
+shortcut = SubResource("Shortcut_xj0b1")
+
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/HealthUpgradeButton" to="." method="OnHealthUpgradeButtonPressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/PowerUpgradeButton" to="." method="OnPowerUpgradeButtonPressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/DefenseUpgradeButton" to="." method="OnDefenseUpgradeButtonPressed"]
