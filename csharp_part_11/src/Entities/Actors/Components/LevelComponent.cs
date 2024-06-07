@@ -54,6 +54,7 @@ namespace SuperRogalik
         {
             CurrentXp -= GetExperienceToNextLevel();
             CurrentLevel++;
+            EmitSignal(SignalName.XpChanged, CurrentXp, GetExperienceToNextLevel());
             EmitSignal(SignalName.LeveledUp);
         }
 
