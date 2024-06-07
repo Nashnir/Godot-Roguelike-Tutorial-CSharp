@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://nh8i5wjq5ptv"]
+
+[ext_resource type="Script" path="res://src/GUI/InventoryMenu/InventoryMenu.cs" id="1_3bbgr"]
+[ext_resource type="Texture2D" uid="uid://dwt17ac8sajxv" path="res://assets/images/kenney_1-bit-pack/monochrome_packed.png" id="1_an3ja"]
+[ext_resource type="FontFile" uid="uid://s337gi6ln3f" path="res://assets/fonts/Kenney Pixel.ttf" id="2_lgdfr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nkqhf"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+texture = ExtResource("1_an3ja")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(768, 336, 16, 16)
+
+[sub_resource type="LabelSettings" id="LabelSettings_llfmd"]
+font = ExtResource("2_lgdfr")
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_6lcxb"]
+color = Color(1, 1, 1, 1)
+
+[node name="InventoryMenu" type="CanvasLayer"]
+script = ExtResource("1_3bbgr")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_nkqhf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+label_settings = SubResource("LabelSettings_llfmd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_6lcxb")
+
+[node name="InventoryList" type="VBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2

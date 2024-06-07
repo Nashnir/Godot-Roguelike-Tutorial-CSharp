@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=9 format=3 uid="uid://dsrreknhgxeoy"]
+
+[ext_resource type="Texture2D" uid="uid://dwt17ac8sajxv" path="res://assets/images/kenney_1-bit-pack/monochrome_packed.png" id="1_na5f8"]
+[ext_resource type="Texture2D" uid="uid://cgb7a8k7dnmp" path="res://assets/resources/default_death_texture.tres" id="1_r75oa"]
+[ext_resource type="Script" path="res://src/Entities/Actors/Components/ComponentDefinitions/FighterComponentDefinition.cs" id="1_tlkto"]
+[ext_resource type="Script" path="res://src/Entities/EntityDefinition.cs" id="2_vpuw0"]
+[ext_resource type="Script" path="res://src/Entities/Actors/Components/ComponentDefinitions/LevelComponentDefinition.cs" id="3_rqnq4"]
+
+[sub_resource type="Resource" id="Resource_l1ft0"]
+script = ExtResource("1_tlkto")
+MaxHp = 10
+Power = 3
+Defense = 0
+DeathTexture = ExtResource("1_r75oa")
+DeathColor = Color(0.545098, 0, 0, 1)
+
+[sub_resource type="Resource" id="Resource_fvreo"]
+script = ExtResource("3_rqnq4")
+LevelUpBase = 0
+LevelUpFactor = 150
+XpGiven = 35
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcpp7"]
+atlas = ExtResource("1_na5f8")
+region = Rect2(400, 32, 16, 16)
+
+[resource]
+script = ExtResource("2_vpuw0")
+Name = "Orc"
+Texture = SubResource("AtlasTexture_xcpp7")
+Color = Color(0.247059, 0.498039, 0.247059, 1)
+IsBlockingMovement = true
+EntityType = 2
+FighterComponentDefinition = SubResource("Resource_l1ft0")
+AIType = 1
+InventoryCapacity = 0
+LevelInfo = SubResource("Resource_fvreo")
