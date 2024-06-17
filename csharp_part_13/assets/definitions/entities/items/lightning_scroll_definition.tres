@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=6 format=3 uid="uid://cqgunyqy47bqo"]
+
+[ext_resource type="Texture2D" uid="uid://dwt17ac8sajxv" path="res://assets/images/kenney_1-bit-pack/monochrome_packed.png" id="1_dgoaj"]
+[ext_resource type="Script" path="res://src/Entities/EntityDefinition.cs" id="1_nar6a"]
+[ext_resource type="Script" path="res://src/Entities/Actors/Components/ComponentDefinitions/LightningDamageConsumableComponentDefinition.cs" id="1_s2mjr"]
+
+[sub_resource type="Resource" id="Resource_nbdpy"]
+script = ExtResource("1_s2mjr")
+Damage = 20
+MaximumRange = 5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8irm"]
+atlas = ExtResource("1_dgoaj")
+region = Rect2(528, 240, 16, 16)
+
+[resource]
+script = ExtResource("1_nar6a")
+Name = "Lighting Scroll"
+Texture = SubResource("AtlasTexture_a8irm")
+Color = Color(1, 1, 0, 1)
+IsBlockingMovement = false
+EntityType = 1
+AIType = 0
+ItemComponentDefinition = SubResource("Resource_nbdpy")
+InventoryCapacity = 0
+HasEquipment = false

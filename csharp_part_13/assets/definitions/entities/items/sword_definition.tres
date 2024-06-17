@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=6 format=3 uid="uid://dcgu41piaqxwm"]
+
+[ext_resource type="Script" path="res://src/Entities/EntityDefinition.cs" id="1_6tlfe"]
+[ext_resource type="Script" path="res://src/Entities/Actors/Components/ComponentDefinitions/EquippableComponentDefinition.cs" id="1_nu1xj"]
+[ext_resource type="Texture2D" uid="uid://dwt17ac8sajxv" path="res://assets/images/kenney_1-bit-pack/monochrome_packed.png" id="2_esk7e"]
+
+[sub_resource type="Resource" id="Resource_jron6"]
+script = ExtResource("1_nu1xj")
+EquipmentType = 0
+PowerBonus = 4
+DefenseBonus = 0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aclm5"]
+atlas = ExtResource("2_esk7e")
+region = Rect2(560, 128, 16, 16)
+
+[resource]
+script = ExtResource("1_6tlfe")
+Name = "Sword"
+Texture = SubResource("AtlasTexture_aclm5")
+Color = Color(0.498039, 0.498039, 0.498039, 1)
+IsBlockingMovement = false
+EntityType = 1
+AIType = 0
+ItemComponentDefinition = SubResource("Resource_jron6")
+InventoryCapacity = 0
+HasEquipment = false

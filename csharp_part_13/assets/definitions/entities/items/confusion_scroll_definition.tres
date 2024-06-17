@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=6 format=3 uid="uid://rjbe2xwdwrjq"]
+
+[ext_resource type="Script" path="res://src/Entities/EntityDefinition.cs" id="1_curea"]
+[ext_resource type="Script" path="res://src/Entities/Actors/Components/ComponentDefinitions/ConfusionConsumableComponentDefinition.cs" id="1_p1hse"]
+[ext_resource type="Texture2D" uid="uid://dwt17ac8sajxv" path="res://assets/images/kenney_1-bit-pack/monochrome_packed.png" id="2_dwyh0"]
+
+[sub_resource type="Resource" id="Resource_0c182"]
+script = ExtResource("1_p1hse")
+NumberOfTurns = 10
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qo1dd"]
+atlas = ExtResource("2_dwyh0")
+region = Rect2(528, 240, 16, 16)
+
+[resource]
+script = ExtResource("1_curea")
+Name = "Confusion Scroll"
+Texture = SubResource("AtlasTexture_qo1dd")
+Color = Color(0.811765, 0.247059, 1, 1)
+IsBlockingMovement = false
+EntityType = 1
+AIType = 0
+ItemComponentDefinition = SubResource("Resource_0c182")
+InventoryCapacity = 0
+HasEquipment = false

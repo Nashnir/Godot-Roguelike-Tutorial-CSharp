@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=6 format=3 uid="uid://nbgl5e3eo8yg"]
+
+[ext_resource type="Script" path="res://src/Entities/Actors/Components/ComponentDefinitions/EquippableComponentDefinition.cs" id="1_o7rqb"]
+[ext_resource type="Script" path="res://src/Entities/EntityDefinition.cs" id="1_vnhsl"]
+[ext_resource type="Texture2D" uid="uid://dwt17ac8sajxv" path="res://assets/images/kenney_1-bit-pack/monochrome_packed.png" id="2_i0jlb"]
+
+[sub_resource type="Resource" id="Resource_6s55t"]
+script = ExtResource("1_o7rqb")
+EquipmentType = 1
+PowerBonus = 0
+DefenseBonus = 3
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocub7"]
+atlas = ExtResource("2_i0jlb")
+region = Rect2(560, 16, 16, 16)
+
+[resource]
+script = ExtResource("1_vnhsl")
+Name = "Chainmail"
+Texture = SubResource("AtlasTexture_ocub7")
+Color = Color(0.498039, 0.498039, 0.498039, 1)
+IsBlockingMovement = false
+EntityType = 1
+AIType = 0
+ItemComponentDefinition = SubResource("Resource_6s55t")
+InventoryCapacity = 0
+HasEquipment = false

@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=6 format=3 uid="uid://eb0kvqea0a2w"]
+
+[ext_resource type="Script" path="res://src/Entities/EntityDefinition.cs" id="1_7biut"]
+[ext_resource type="Script" path="res://src/Entities/Actors/Components/ComponentDefinitions/EquippableComponentDefinition.cs" id="1_740o3"]
+[ext_resource type="Texture2D" uid="uid://dwt17ac8sajxv" path="res://assets/images/kenney_1-bit-pack/monochrome_packed.png" id="2_7x0ln"]
+
+[sub_resource type="Resource" id="Resource_2515l"]
+script = ExtResource("1_740o3")
+EquipmentType = 1
+PowerBonus = 0
+DefenseBonus = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ga5ch"]
+atlas = ExtResource("2_7x0ln")
+region = Rect2(512, 16, 16, 16)
+
+[resource]
+script = ExtResource("1_7biut")
+Name = "Leather Armor"
+Texture = SubResource("AtlasTexture_ga5ch")
+Color = Color(1, 0.498039, 0, 1)
+IsBlockingMovement = false
+EntityType = 1
+AIType = 0
+ItemComponentDefinition = SubResource("Resource_2515l")
+InventoryCapacity = 0
+HasEquipment = false

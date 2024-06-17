@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="EntityDefinition" load_steps=6 format=3 uid="uid://dbu6pncoeu2jr"]
+
+[ext_resource type="Script" path="res://src/Entities/EntityDefinition.cs" id="1_edl8w"]
+[ext_resource type="Script" path="res://src/Entities/Actors/Components/ComponentDefinitions/EquippableComponentDefinition.cs" id="1_ix8vi"]
+[ext_resource type="Texture2D" uid="uid://dwt17ac8sajxv" path="res://assets/images/kenney_1-bit-pack/monochrome_packed.png" id="2_yrr20"]
+
+[sub_resource type="Resource" id="Resource_qy68f"]
+script = ExtResource("1_ix8vi")
+EquipmentType = 0
+PowerBonus = 2
+DefenseBonus = 0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_teyyf"]
+atlas = ExtResource("2_yrr20")
+region = Rect2(576, 96, 16, 16)
+
+[resource]
+script = ExtResource("1_edl8w")
+Name = "Dagger"
+Texture = SubResource("AtlasTexture_teyyf")
+Color = Color(0.498039, 0.498039, 0.498039, 1)
+IsBlockingMovement = false
+EntityType = 1
+AIType = 0
+ItemComponentDefinition = SubResource("Resource_qy68f")
+InventoryCapacity = 0
+HasEquipment = false
